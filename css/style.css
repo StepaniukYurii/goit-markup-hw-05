@@ -13,6 +13,7 @@
   --border-color: #eeeeee;
   --info-color: rgba(255, 255, 255, 0.6);
   --icon-color: #afb1b8;
+  --background-owerlay: rgba(33, 150, 243, 0.9);
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -29,7 +30,7 @@ p {
   padding: 0;
 }
 :focus {
-  outline: none;
+  outline: 3px double var(--accent-color);
 }
 .container {
   width: 1200px;
@@ -247,6 +248,28 @@ p {
   justify-content: center;
   gap: 30px;
 }
+.info-box {
+  display: block;
+  position: relative;
+}
+.info-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-top: 224px;
+  width: 370px;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+.info-text {
+  text-transform: uppercase;
+  line-height: 1.14;
+  color: var(--background-color);
+}
+.qwer {
+  display: block;
+}
 .team-section {
   background-color: var(--button-background-color);
 }
@@ -320,12 +343,32 @@ p {
   flex-wrap: wrap;
   gap: 30px;
 }
-.block-portfolio {
+.overlay-box {
+  overflow: hidden;
+  height: 294px;
   width: 370px;
+  position: absolute;
 }
 .block-portfolio:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.overlay {
+  padding: 63px 24px;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: 250ms ease;
+  background: var(--background-owerlay);
+}
+.block-portfolio:hover .overlay {
+  transform: translateY(0);
+}
+.overlay-text {
+  color: var(--background-color);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
 }
 .img-portfolio {
   display: block;
@@ -451,4 +494,53 @@ p {
   width: 20px;
   height: 20px;
   fill: var(--background-color);
+}
+
+.modal-section {
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+.modal-box {
+  position: relative;
+  width: 528px;
+  height: 581px;
+  background-color: var(--background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.modal-container {
+  margin-top: 8px;
+  margin-right: 8px;
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 30px;
+}
+.btn-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.modal-icon {
+  width: 11px;
+  height: 11px;
+  fill: black;
+}
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }

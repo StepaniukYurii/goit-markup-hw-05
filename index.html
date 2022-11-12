@@ -53,7 +53,7 @@
         <section class="section hero-section">
             <div class="container">
                 <h1 class="hero-tittle">Ефективні рішення для вашого бізнесу</h1>
-                <button type="button" class="button b-order">Замовити послугу</button>
+                <button data-modal-open type="button" class="button b-order">Замовити послугу</button>
             </div>
         </section>
         <section class="section description-section">
@@ -88,9 +88,24 @@
             <div class="container">
                 <h2 class="info-tittle section-tittle">Чим ми займаємося</h2>
                 <ul class="ul info-images">
-                    <li><img width="370" src="./images/comp.jpg" alt="комп'ютер"></li>
-                    <li><img width="370" src="./images/phone.jpg" alt="телефон"></li>
-                    <li><img width="370" src="./images/tablet.jpg" alt="планшет"></li>
+                    <li class="info-box">
+                        <div class="info-block">
+                            <h3 class="info-text">Десктопні додатки</h3>
+                        </div>
+                        <img class="qwer" width="370" src="./images/comp.jpg" alt="комп'ютер">
+                    </li>
+                    <li class="info-box">
+                        <div class="info-block">
+                        <h3 class="info-text">Мобільні додатки</h3>
+                        </div>  
+                        <img width="370" src="./images/phone.jpg" alt="телефон">
+                    </li>
+                    <li class="info-box">
+                        <div class="info-block">
+                            <h3 class="info-text">Дизайнерські рішення</h3>
+                        </div>
+                        <img width="370" src="./images/tablet.jpg" alt="планшет">
+                    </li>
                 </ul>
             </div>
         </section>
@@ -253,5 +268,13 @@
             </div>
         </div>
     </footer>
+    <section data-modal class="modal-section is-hidden">
+        <div class="modal-box">
+            <div class="modal-container">
+                <button data-modal-close type="button" class="btn-close"><svg class="modal-icon"><use href="./images/icons.svg#icon-vector"></use></svg></button>
+            </div>
+        </div>
+    </section>
+    <script src="./js/modal.js"></script>
 </body>
 </html>
