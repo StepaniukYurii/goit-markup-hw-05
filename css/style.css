@@ -387,7 +387,9 @@ p {
   width: 100%;
   height: 100%;
   transform: translateY(100%);
-  transition: 250ms ease;
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   background: var(--background-owerlay);
 }
 .block-portfolio:hover .overlay {
